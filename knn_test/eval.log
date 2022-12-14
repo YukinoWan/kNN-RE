@@ -1,0 +1,174 @@
+['knn_test.py', '--task', 'ace05', '--do_eval', '--eval_test', '--eval_with_gold', '--model', 'bert-base-uncased', '--do_lower_case', '--train_batch_size', '32', '--eval_batch_size', '32', '--learning_rate', '2e-5', '--num_train_epochs', '10', '--context_window', '0', '--max_seq_length', '128', '--entity_output_dir', '/home/zhen/dataset/ace05data', '--output_dir', 'knn_test', '--seed', '0']
+Namespace(add_new_tokens=False, bertadam=False, context_window=0, do_eval=True, do_lower_case=True, do_train=False, entity_output_dir='/home/zhen/dataset/ace05data', entity_predictions_dev='ent_pred_dev.json', entity_predictions_test='ent_pred_test.json', eval_batch_size=32, eval_metric='f1', eval_per_epoch=10, eval_test=True, eval_with_gold=True, learning_rate=2e-05, max_seq_length=128, model='bert-base-uncased', negative_label='no_relation', no_cuda=False, num_train_epochs=10.0, output_dir='knn_test', prediction_file='predictions.json', seed=0, task='ace05', train_batch_size=32, train_file=None, train_mode='random_sorted', warmup_proportion=0.1)
+device: cuda, n_gpu: 2
+{}
+Writing example 0 of 25514
+*** Example ***
+guid: CNN_ENG_20030515_193533.6@3::(20,21)-(14,14)
+tokens: [CLS] in today ' s daily news , a 60 - year - old [unused9] woman [unused10] acknowledges she was the 19 - year - old [unused7] white house [unused8] intern who slept with j ##fk . [SEP]
+input_ids: 101 1999 2651 1005 1055 3679 2739 1010 1037 3438 1011 2095 1011 2214 10 2450 11 28049 2016 2001 1996 2539 1011 2095 1011 2214 8 2317 2160 9 25204 2040 7771 2007 1046 24316 1012 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+input_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+segment_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+label: no_relation (id = 0)
+sub_idx, obj_idx: 26, 14
+*** Example ***
+guid: CNN_ENG_20030515_193533.6@3::(20,21)-(16,16)
+tokens: [CLS] in today ' s daily news , a 60 - year - old woman acknowledges [unused9] she [unused10] was the 19 - year - old [unused7] white house [unused8] intern who slept with j ##fk . [SEP]
+input_ids: 101 1999 2651 1005 1055 3679 2739 1010 1037 3438 1011 2095 1011 2214 2450 28049 10 2016 11 2001 1996 2539 1011 2095 1011 2214 8 2317 2160 9 25204 2040 7771 2007 1046 24316 1012 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+input_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+segment_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+label: no_relation (id = 0)
+sub_idx, obj_idx: 26, 16
+*** Example ***
+guid: CNN_ENG_20030515_193533.6@3::(20,21)-(22,22)
+tokens: [CLS] in today ' s daily news , a 60 - year - old woman acknowledges she was the 19 - year - old [unused7] white house [unused8] [unused9] intern [unused10] who slept with j ##fk . [SEP]
+input_ids: 101 1999 2651 1005 1055 3679 2739 1010 1037 3438 1011 2095 1011 2214 2450 28049 2016 2001 1996 2539 1011 2095 1011 2214 8 2317 2160 9 10 25204 11 2040 7771 2007 1046 24316 1012 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+input_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+segment_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+label: no_relation (id = 0)
+sub_idx, obj_idx: 24, 28
+*** Example ***
+guid: CNN_ENG_20030515_193533.6@3::(20,21)-(23,23)
+tokens: [CLS] in today ' s daily news , a 60 - year - old woman acknowledges she was the 19 - year - old [unused7] white house [unused8] intern [unused9] who [unused10] slept with j ##fk . [SEP]
+input_ids: 101 1999 2651 1005 1055 3679 2739 1010 1037 3438 1011 2095 1011 2214 2450 28049 2016 2001 1996 2539 1011 2095 1011 2214 8 2317 2160 9 25204 10 2040 11 7771 2007 1046 24316 1012 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+input_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+segment_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+label: no_relation (id = 0)
+sub_idx, obj_idx: 24, 29
+*** Example ***
+guid: CNN_ENG_20030515_193533.6@3::(20,21)-(26,26)
+tokens: [CLS] in today ' s daily news , a 60 - year - old woman acknowledges she was the 19 - year - old [unused7] white house [unused8] intern who slept with [unused9] j ##fk [unused10] . [SEP]
+input_ids: 101 1999 2651 1005 1055 3679 2739 1010 1037 3438 1011 2095 1011 2214 2450 28049 2016 2001 1996 2539 1011 2095 1011 2214 8 2317 2160 9 25204 2040 7771 2007 10 1046 24316 11 1012 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+input_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+segment_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+label: no_relation (id = 0)
+sub_idx, obj_idx: 24, 32
+*** Example ***
+guid: CNN_ENG_20030515_193533.6@3::(22,22)-(20,21)
+tokens: [CLS] in today ' s daily news , a 60 - year - old woman acknowledges she was the 19 - year - old [unused15] white house [unused16] [unused13] intern [unused14] who slept with j ##fk . [SEP]
+input_ids: 101 1999 2651 1005 1055 3679 2739 1010 1037 3438 1011 2095 1011 2214 2450 28049 2016 2001 1996 2539 1011 2095 1011 2214 16 2317 2160 17 14 25204 15 2040 7771 2007 1046 24316 1012 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+input_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+segment_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+label: ORG-AFF (id = 2)
+sub_idx, obj_idx: 28, 24
+*** Example ***
+guid: CNN_ENG_20030515_193533.6@3::(23,23)-(26,26)
+tokens: [CLS] in today ' s daily news , a 60 - year - old woman acknowledges she was the 19 - year - old white house intern [unused13] who [unused14] slept with [unused9] j ##fk [unused10] . [SEP]
+input_ids: 101 1999 2651 1005 1055 3679 2739 1010 1037 3438 1011 2095 1011 2214 2450 28049 2016 2001 1996 2539 1011 2095 1011 2214 2317 2160 25204 14 2040 15 7771 2007 10 1046 24316 11 1012 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+input_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+segment_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+label: PER-SOC (id = 5)
+sub_idx, obj_idx: 27, 32
+*** Example ***
+guid: CNN_ENG_20030528_172957.18@4::(17,17)-(21,21)
+tokens: [CLS] a convicted [unused13] murderer [unused14] is released from [unused27] prison [unused28] before serving his full sentence and then a nightmare becomes reality . [SEP]
+input_ids: 101 1037 7979 14 13422 15 2003 2207 2013 28 3827 29 2077 3529 2010 2440 6251 1998 2059 1037 10103 4150 4507 1012 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+input_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+segment_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+label: PHYS (id = 4)
+sub_idx, obj_idx: 3, 9
+*** Example ***
+guid: CNN_ENG_20030528_172957.18@7::(52,52)-(53,53)
+tokens: [CLS] [unused13] his [unused14] [unused9] psychiatrist [unused10] backed him up . [SEP]
+input_ids: 101 14 2010 15 10 18146 11 6153 2032 2039 1012 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+input_mask: 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+segment_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+label: PER-SOC (id = 5)
+sub_idx, obj_idx: 1, 4
+*** Example ***
+guid: CNN_ENG_20030528_172957.18@8::(58,58)-(73,73)
+tokens: [CLS] [unused13] serious [unused14] was serving a 30 - year sentence for the self - confessed 1992 killing of his wife in [unused21] clinton [unused22] , maryland , but after a relentless campaign that included a letter from his psychiatrist saying serious was unlikely to commit such violence again , the judge in this case , got him released . [SEP]
+input_ids: 101 14 3809 15 2001 3529 1037 2382 1011 2095 6251 2005 1996 2969 1011 14312 2826 4288 1997 2010 2564 1999 22 7207 23 1010 5374 1010 2021 2044 1037 21660 3049 2008 2443 1037 3661 2013 2010 18146 3038 3809 2001 9832 2000 10797 2107 4808 2153 1010 1996 3648 1999 2023 2553 1010 2288 2032 2207 1012 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+input_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+segment_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+label: PHYS (id = 4)
+sub_idx, obj_idx: 1, 22
+*** Example ***
+guid: CNN_ENG_20030528_172957.18@8::(70,70)-(71,71)
+tokens: [CLS] serious was serving a 30 - year sentence for the self - confessed 1992 killing of [unused13] his [unused14] [unused9] wife [unused10] in clinton , maryland , but after a relentless campaign that included a letter from his psychiatrist saying serious was unlikely to commit such violence again , the judge in this case , got him released . [SEP]
+input_ids: 101 3809 2001 3529 1037 2382 1011 2095 6251 2005 1996 2969 1011 14312 2826 4288 1997 14 2010 15 10 2564 11 1999 7207 1010 5374 1010 2021 2044 1037 21660 3049 2008 2443 1037 3661 2013 2010 18146 3038 3809 2001 9832 2000 10797 2107 4808 2153 1010 1996 3648 1999 2023 2553 1010 2288 2032 2207 1012 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+input_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+segment_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+label: PER-SOC (id = 5)
+sub_idx, obj_idx: 17, 20
+*** Example ***
+guid: CNN_ENG_20030528_172957.18@8::(87,87)-(88,88)
+tokens: [CLS] serious was serving a 30 - year sentence for the self - confessed 1992 killing of his wife in clinton , maryland , but after a relentless campaign that included a letter from [unused13] his [unused14] [unused9] psychiatrist [unused10] saying serious was unlikely to commit such violence again , the judge in this case , got him released . [SEP]
+input_ids: 101 3809 2001 3529 1037 2382 1011 2095 6251 2005 1996 2969 1011 14312 2826 4288 1997 2010 2564 1999 7207 1010 5374 1010 2021 2044 1037 21660 3049 2008 2443 1037 3661 2013 14 2010 15 10 18146 11 3038 3809 2001 9832 2000 10797 2107 4808 2153 1010 1996 3648 1999 2023 2553 1010 2288 2032 2207 1012 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+input_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+segment_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+label: PER-SOC (id = 5)
+sub_idx, obj_idx: 34, 37
+*** Example ***
+guid: CNN_ENG_20030528_172957.18@8::(71,71)-(73,73)
+tokens: [CLS] serious was serving a 30 - year sentence for the self - confessed 1992 killing of his [unused13] wife [unused14] in [unused21] clinton [unused22] , maryland , but after a relentless campaign that included a letter from his psychiatrist saying serious was unlikely to commit such violence again , the judge in this case , got him released . [SEP]
+input_ids: 101 3809 2001 3529 1037 2382 1011 2095 6251 2005 1996 2969 1011 14312 2826 4288 1997 2010 14 2564 15 1999 22 7207 23 1010 5374 1010 2021 2044 1037 21660 3049 2008 2443 1037 3661 2013 2010 18146 3038 3809 2001 9832 2000 10797 2107 4808 2153 1010 1996 3648 1999 2023 2553 1010 2288 2032 2207 1012 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+input_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+segment_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+label: PHYS (id = 4)
+sub_idx, obj_idx: 18, 22
+*** Example ***
+guid: CNN_ENG_20030528_172957.18@8::(73,73)-(75,75)
+tokens: [CLS] serious was serving a 30 - year sentence for the self - confessed 1992 killing of his wife in [unused19] clinton [unused20] , [unused21] maryland [unused22] , but after a relentless campaign that included a letter from his psychiatrist saying serious was unlikely to commit such violence again , the judge in this case , got him released . [SEP]
+input_ids: 101 3809 2001 3529 1037 2382 1011 2095 6251 2005 1996 2969 1011 14312 2826 4288 1997 2010 2564 1999 20 7207 21 1010 22 5374 23 1010 2021 2044 1037 21660 3049 2008 2443 1037 3661 2013 2010 18146 3038 3809 2001 9832 2000 10797 2107 4808 2153 1010 1996 3648 1999 2023 2553 1010 2288 2032 2207 1012 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+input_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+segment_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+label: PART-WHOLE (id = 6)
+sub_idx, obj_idx: 20, 24
+*** Example ***
+guid: CNN_ENG_20030528_172957.18@10::(128,128)-(116,116)
+tokens: [CLS] [unused21] maryland [unused22] is the only state that allows un ##che ##cked judicial rec ##ons ##ider ##ation , allowing [unused13] judges [unused14] to reduce prison terms at any time after sentencing . [SEP]
+input_ids: 101 22 5374 23 2003 1996 2069 2110 2008 4473 4895 5403 18141 8268 28667 5644 18688 3370 1010 4352 14 6794 15 2000 5547 3827 3408 2012 2151 2051 2044 23280 1012 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+input_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+segment_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+label: ORG-AFF (id = 2)
+sub_idx, obj_idx: 20, 1
+*** Example ***
+guid: CNN_ENG_20030528_172957.18@11::(146,146)-(151,151)
+tokens: [CLS] those favor ##ing the rule say it gives [unused13] convicts [unused14] incentive to behave in [unused27] prison [unused28] and enables judges to release prisoners if new evidence comes to light . [SEP]
+input_ids: 101 2216 5684 2075 1996 3627 2360 2009 3957 14 24948 15 20438 2000 16582 1999 28 3827 29 1998 12939 6794 2000 2713 5895 2065 2047 3350 3310 2000 2422 1012 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+input_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+segment_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+label: PHYS (id = 4)
+sub_idx, obj_idx: 9, 16
+*** Example ***
+guid: CNN_ENG_20030528_172957.18@12::(172,173)-(176,176)
+tokens: [CLS] at some point after his release , [unused13] michael serious [unused14] befriended a [unused9] woman [unused10] named dar ##lene williamson . [SEP]
+input_ids: 101 2012 2070 2391 2044 2010 2713 1010 14 2745 3809 15 23386 1037 10 2450 11 2315 18243 11474 14333 1012 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+input_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+segment_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+label: PER-SOC (id = 5)
+sub_idx, obj_idx: 8, 14
+*** Example ***
+guid: CNN_ENG_20030528_172957.18@13::(183,183)-(197,197)
+tokens: [CLS] last week [unused13] williamson [unused14] , a mother of four , was found stabbed to death at a [unused27] condom ##inium [unused28] in green ##belt , maryland . [SEP]
+input_ids: 101 2197 2733 14 14333 15 1010 1037 2388 1997 2176 1010 2001 2179 13263 2000 2331 2012 1037 28 20910 27585 29 1999 2665 21561 1010 5374 1012 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+input_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+segment_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+label: PHYS (id = 4)
+sub_idx, obj_idx: 3, 19
+*** Example ***
+guid: CNN_ENG_20030528_172957.18@13::(186,186)-(188,188)
+tokens: [CLS] last week williamson , a [unused13] mother [unused14] of [unused9] four [unused10] , was found stabbed to death at a condom ##inium in green ##belt , maryland . [SEP]
+input_ids: 101 2197 2733 14333 1010 1037 14 2388 15 1997 10 2176 11 1010 2001 2179 13263 2000 2331 2012 1037 20910 27585 1999 2665 21561 1010 5374 1012 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+input_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+segment_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+label: PER-SOC (id = 5)
+sub_idx, obj_idx: 6, 10
+*** Example ***
+guid: CNN_ENG_20030528_172957.18@13::(197,197)-(199,199)
+tokens: [CLS] last week williamson , a mother of four , was found stabbed to death at a [unused24] condom ##inium [unused25] in [unused21] green ##belt [unused22] , maryland . [SEP]
+input_ids: 101 2197 2733 14333 1010 1037 2388 1997 2176 1010 2001 2179 13263 2000 2331 2012 1037 25 20910 27585 26 1999 22 2665 21561 23 1010 5374 1012 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+input_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+segment_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+label: PART-WHOLE (id = 6)
+sub_idx, obj_idx: 17, 22
+Writing example 10000 of 25514
+Writing example 20000 of 25514
+Average #tokens: 43.38
+Max #tokens: 92
+25514 (100.00 %) examples can fit max_seq_length = 128
+{'SUBJ_START': '[unused1]', 'SUBJ_END': '[unused2]', 'OBJ_START': '[unused3]', 'OBJ_END': '[unused4]', 'SUBJ=ORG': '[unused5]', 'OBJ=PER': '[unused6]', 'SUBJ_START=ORG': '[unused7]', 'SUBJ_END=ORG': '[unused8]', 'OBJ_START=PER': '[unused9]', 'OBJ_END=PER': '[unused10]', 'SUBJ=PER': '[unused11]', 'OBJ=ORG': '[unused12]', 'SUBJ_START=PER': '[unused13]', 'SUBJ_END=PER': '[unused14]', 'OBJ_START=ORG': '[unused15]', 'OBJ_END=ORG': '[unused16]', 'SUBJ=GPE': '[unused17]', 'OBJ=GPE': '[unused18]', 'SUBJ_START=GPE': '[unused19]', 'SUBJ_END=GPE': '[unused20]', 'OBJ_START=GPE': '[unused21]', 'OBJ_END=GPE': '[unused22]', 'SUBJ=FAC': '[unused23]', 'SUBJ_START=FAC': '[unused24]', 'SUBJ_END=FAC': '[unused25]', 'OBJ=FAC': '[unused26]', 'OBJ_START=FAC': '[unused27]', 'OBJ_END=FAC': '[unused28]', 'OBJ=LOC': '[unused29]', 'OBJ_START=LOC': '[unused30]', 'OBJ_END=LOC': '[unused31]', 'SUBJ=LOC': '[unused32]', 'SUBJ_START=LOC': '[unused33]', 'SUBJ_END=LOC': '[unused34]', 'SUBJ=VEH': '[unused35]', 'SUBJ_START=VEH': '[unused36]', 'SUBJ_END=VEH': '[unused37]', 'OBJ=VEH': '[unused38]', 'OBJ_START=VEH': '[unused39]', 'OBJ_END=VEH': '[unused40]', 'OBJ=WEA': '[unused41]', 'OBJ_START=WEA': '[unused42]', 'OBJ_END=WEA': '[unused43]', 'SUBJ=WEA': '[unused44]', 'SUBJ_START=WEA': '[unused45]', 'SUBJ_END=WEA': '[unused46]'}
+***** Test *****
+  Num examples = 25514
+  Batch size = 32
