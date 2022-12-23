@@ -108,5 +108,5 @@ Then `bash save_datastore` with:
 ```
 
 ### Memory construction
-With the constructed memory for retrieval and test, you can run kNN-RE by `python knn_faiss.py {train | ds } {dev | test}`, as the example above, with the train memory and test memory on i2b2, you can run `python knn_faiss.py train test` to evaluate kNN-RE results.
+With the constructed memory for retrieval and test, you can run kNN-RE by `python knn_faiss.py {task} {train | ds } {dev | test}`, as the example above, with the train memory and test memory on i2b2, you can run `python knn_faiss.py i2b2 train test` to evaluate kNN-RE results.
 
