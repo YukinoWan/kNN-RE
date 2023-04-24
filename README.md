@@ -1,3 +1,5 @@
+The repository contains the code of the paper "[Rescue Implicit and Long-tail Cases: Nearest Neighbor Relation Extraction.](https://aclanthology.org/2022.emnlp-main.113/)"
+
 This respository is originally forked from [PURE](https://github.com/princeton-nlp/PURE)
 ## Setup
 
